@@ -1,0 +1,29 @@
+package testNG1;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.BeforeClass;
+
+public class Parlleltesting1 {
+	
+	WebDriver driver;
+	
+	@BeforeClass
+	void setup(String br)
+	{
+		switch(br)
+		{
+		case "chrome": driver=new ChromeDriver(); break;
+		case "edge" : driver=new EdgeDriver();break;
+		
+		default: System.out.println("Invalid browser");return;
+			
+		}
+		driver.get("https://ibm-learning.udemy.com/organization/home/");
+		driver.manage().window().maximize();
+		
+		
+	}
+
+}
